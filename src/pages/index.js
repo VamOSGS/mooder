@@ -34,21 +34,16 @@ export default function Home() {
           spacing={{ base: 8, md: 14 }}
           py={{ base: 20, md: 36 }}
         >
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}
-          >
-            Make Happy your Employees <br />
-            <Text
-              as={'span'}
-              color={'#04297A'}
-              textAlign='center'
-              margin='auto'
+          <Box>
+            <Logo height={32} width={400} />
+            <Heading
+              fontWeight={600}
+              fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+              lineHeight={'110%'}
             >
-              with <Logo height={32} width={400} />
-            </Text>
-          </Heading>
+              Make Happy your Employees <br />
+            </Heading>
+          </Box>
           <Text color={'gray.500'}>
             Monetize your content by charging your most loyal readers and reward
             them loyalty points. Give back to your loyal readers by granting
