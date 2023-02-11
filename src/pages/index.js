@@ -15,6 +15,7 @@ import ThreeTierPricingHorizontal from '@/components/Pricing';
 import LargeWithLogoCentered from '@/components/Footer';
 import { Logo } from '@/components/Logo';
 import Navbar from '@/components/Navbar';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -45,7 +46,7 @@ export default function Home() {
               textAlign='center'
               margin='auto'
             >
-              with <Logo height={32} width={200} />
+              with <Logo height={32} width={400} />
             </Text>
           </Heading>
           <Text color={'gray.500'}>
@@ -68,6 +69,8 @@ export default function Home() {
               _hover={{
                 bg: '#ff1100',
               }}
+              as={Link}
+              href='/signup'
             >
               Get Started
             </Button>

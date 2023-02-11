@@ -7,7 +7,6 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -22,12 +21,13 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons';
 import { Logo } from './Logo';
+import Link from 'next/link';
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box position='fixed' w='full' zIndex={999}>
+    <Box position='fixed' top='0' w='full' zIndex={999}>
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
@@ -53,9 +53,13 @@ export default function Navbar() {
             aria-label={'Toggle Navigation'}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Box>
-            <Logo />
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: 'center', md: 'start' }}
+          alignItems='center'
+        >
+          <Box as={Link} href='/'>
+            <Logo width={160} />
           </Box>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -234,9 +238,9 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Text key={child.label} py={2} href={child.href}>
                 {child.label}
-              </Link>
+              </Text>
             ))}
         </Stack>
       </Collapse>
