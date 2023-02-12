@@ -27,7 +27,7 @@ export default function Home() {
         />
       </Head>
 
-      <Container maxW={'3xl'} minH='100vh'>
+      <Container maxW={'3xl'} minH='100vh' mt={40}>
         <Stack
           as={Box}
           textAlign={'center'}
@@ -38,16 +38,15 @@ export default function Home() {
             <Logo height={32} width={400} />
             <Heading
               fontWeight={600}
-              fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+              fontSize={{ base: '2xl', sm: '4xl', md: '48px' }}
               lineHeight={'110%'}
             >
-              Make Happy your Employees <br />
+              Make your Employees Happier <br />
             </Heading>
           </Box>
           <Text color={'gray.500'}>
-            Monetize your content by charging your most loyal readers and reward
-            them loyalty points. Give back to your loyal readers by granting
-            them access to your pre-releases and sneak-peaks.
+            Empowering employees' mental well-being through confidential and
+            compassionate tracking and support
           </Text>
           <Stack
             direction={'column'}
@@ -89,7 +88,7 @@ export default function Home() {
                 top={'-15px'}
                 transform={'rotate(10deg)'}
               >
-                Starting at $15/mo
+                Start your free trial
               </Text>
             </Box>
           </Stack>

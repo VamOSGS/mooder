@@ -17,10 +17,10 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 
-const options = [
-  { id: 1, desc: '1 lorem ipsum' },
-  { id: 2, desc: 'Lorem, ipsum dolor.' },
-  { id: 3, desc: 'Monthly Updates' },
+const OPTIONS = [
+  [{ id: 1, desc: '                          14 day free trial' }],
+  [{ id: 1, desc: 'For companies which has up to 100 employees' }],
+  [{ id: 1, desc: 'For companies which has more than 100 employees' }],
 ];
 
 const PackageTier = ({
@@ -110,9 +110,7 @@ const ThreeTierPricingHorizontal = () => {
             }}
           >
             <Text textAlign={'center'}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-              quod in iure vero. Facilis magnam, sed officiis commodi labore
-              odit.
+              Choose your plan to prevent your employees burnout
             </Text>
           </Stack>
         </Stack>
@@ -126,7 +124,7 @@ const ThreeTierPricingHorizontal = () => {
             <PackageTier
               title={'Mooder Starter'}
               typePlan='Free'
-              options={options}
+              options={OPTIONS[0]}
               onClick={() => {
                 toggleLoading(true);
                 setTimeout(() => {
@@ -137,10 +135,10 @@ const ThreeTierPricingHorizontal = () => {
             />
             <Divider />
             <PackageTier
-              title={'Mooder Plus'}
+              title={'Mooder Mini'}
               checked={true}
-              typePlan='$32.00'
-              options={options}
+              typePlan='$90.00'
+              options={OPTIONS[1]}
               onClick={() => {
                 toggleLoading(true);
                 setTimeout(() => {
@@ -151,9 +149,9 @@ const ThreeTierPricingHorizontal = () => {
             />
             <Divider />
             <PackageTier
-              title={'Mooder Pro'}
-              typePlan='$50.00'
-              options={options}
+              title={'Mooder Maxi'}
+              typePlan='$150.00'
+              options={OPTIONS[2]}
               onClick={() => {
                 toggleLoading(true);
                 setTimeout(() => {
