@@ -18,7 +18,12 @@ import { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 
 const OPTIONS = [
-  [{ id: 1, desc: '                          14 day free trial' }],
+  [
+    {
+      id: 1,
+      desc: '                          14 day free trial              .',
+    },
+  ],
   [{ id: 1, desc: 'For companies which has up to 100 employees' }],
   [{ id: 1, desc: 'For companies which has more than 100 employees' }],
 ];
@@ -29,6 +34,7 @@ const PackageTier = ({
   typePlan,
   checked = false,
   onClick,
+  index = 1,
 }) => {
   const colorTextLight = checked ? 'white' : 'purple.600';
   const bgColorLight = checked ? '#04297A' : 'gray.300';
@@ -50,7 +56,9 @@ const PackageTier = ({
       }}
       alignItems={{ md: 'center' }}
     >
-      <Heading size={'md'}>{title}</Heading>
+      <Heading size={'md'} ml={index === 0 ? '-33px' : 0}>
+        {title}
+      </Heading>
       <List spacing={3} textAlign='start'>
         {options.map((desc, id) => (
           <ListItem key={desc.id}>
@@ -59,7 +67,9 @@ const PackageTier = ({
           </ListItem>
         ))}
       </List>
-      <Heading size={'xl'}>{typePlan}</Heading>
+      <Heading size={'xl'} marginRight={index === 0 ? '-83px !important' : 0}>
+        {typePlan}
+      </Heading>
       <Stack>
         <Button
           size='md'
@@ -122,6 +132,7 @@ const ThreeTierPricingHorizontal = () => {
         ) : (
           <>
             <PackageTier
+              index={0}
               title={'Mooder Starter'}
               typePlan='Free'
               options={OPTIONS[0]}
