@@ -45,7 +45,7 @@ export default function Home() {
             </Heading>
           </Box>
           <Text color={'gray.500'}>
-            Empowering employees' mental well-being through confidential and
+            Empowering employees mental well-being through confidential and
             compassionate tracking and support
           </Text>
           <Stack
